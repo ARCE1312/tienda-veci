@@ -21,7 +21,6 @@ body {
   min-height: 100vh;
 }
 
-/* Encabezado */
 header {
   background-color: var(--primary);
   text-align: center;
@@ -30,13 +29,11 @@ header {
   font-size: 1.5rem;
 }
 
-/* Layout general */
 .app-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-/* Menú lateral */
 .sidebar {
   background-color: var(--primary);
   display: flex;
@@ -63,14 +60,12 @@ header {
   background-color: var(--accent);
 }
 
-/* Panel principal */
 main {
   flex: 3;
   padding: 1rem;
   min-width: 300px;
 }
 
-/* Paneles ocultos */
 .panel {
   display: none;
 }
@@ -79,7 +74,6 @@ main {
   display: block;
 }
 
-/* Formularios */
 form input,
 form select,
 form button {
@@ -107,7 +101,11 @@ form button:hover {
   background-color: var(--primary);
 }
 
-/* Tabla de productos */
+.price-preview {
+  margin-top: 0.5rem;
+  color: var(--light);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -142,7 +140,7 @@ th, td {
   color: var(--danger);
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
   .app-container {
     flex-direction: column;
