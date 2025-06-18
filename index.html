@@ -14,43 +14,42 @@
 
   <div class="app-container">
     <aside class="sidebar">
-      <button data-panel="add-product" class="active">➕ Producto</button>
+      <button class="active" data-panel="add-product">➕ Producto</button>
       <button data-panel="view-products">📦 Inventario</button>
       <button data-panel="add-sale">💸 Venta</button>
       <button data-panel="view-balance">📊 Balance</button>
     </aside>
 
     <main>
-      <!-- Registrar Producto -->
+      <!-- Panel: Agregar Producto -->
       <section id="add-product" class="panel active">
         <h2>Registrar Producto</h2>
-       <form id="form-product">
-  <input id="product-name" type="text" placeholder="Nombre" required>
-  <input id="product-cost" type="number" placeholder="Precio de compra" step="0.01" required>
-  <input id="product-quantity" type="number" placeholder="Cantidad comprada" required>
-  <input id="product-price" type="number" placeholder="Precio de venta sugerido" readonly>
-  <button type="submit">Guardar</button>
-</form>
-
+        <form id="form-product">
+          <input id="product-name" type="text" placeholder="Nombre del producto" required>
+          <input id="product-cost" type="number" step="0.01" placeholder="Precio de compra" required>
+          <input id="product-quantity" type="number" placeholder="Cantidad comprada" required>
+          <input id="product-price" type="number" placeholder="Precio sugerido (35%)" readonly>
+          <button type="submit">Guardar Producto</button>
+        </form>
       </section>
 
-      <!-- Ver productos -->
+      <!-- Panel: Ver Productos -->
       <section id="view-products" class="panel">
         <h2>Inventario</h2>
         <div id="products-container"></div>
       </section>
 
-      <!-- Registrar venta -->
+      <!-- Panel: Registrar Venta -->
       <section id="add-sale" class="panel">
         <h2>Registrar Venta</h2>
         <form id="form-sale">
-          <select id="sale-product"></select>
-          <input id="sale-quantity" type="number" placeholder="Cantidad" required>
-          <button type="submit">Registrar</button>
+          <select id="sale-product" required></select>
+          <input id="sale-quantity" type="number" placeholder="Cantidad vendida" required>
+          <button type="submit">Registrar Venta</button>
         </form>
       </section>
 
-      <!-- Balance -->
+      <!-- Panel: Ver Balance -->
       <section id="view-balance" class="panel">
         <h2>Balance del Día</h2>
         <div id="balance-container"></div>
