@@ -24,13 +24,14 @@
       <!-- Registrar Producto -->
       <section id="add-product" class="panel active">
         <h2>Registrar Producto</h2>
-        <form id="form-product">
-          <input id="product-name" type="text" placeholder="Nombre" required>
-          <input id="product-cost" type="number" placeholder="Precio de compra" step="0.01" required>
-          <input id="product-quantity" type="number" placeholder="Cantidad comprada" required>
-          <p class="price-preview">💰 Precio de venta sugerido (35% ganancia): <span id="price-preview">$0.00</span></p>
-          <button type="submit">Guardar</button>
-        </form>
+       <form id="form-product">
+  <input id="product-name" type="text" placeholder="Nombre" required>
+  <input id="product-cost" type="number" placeholder="Precio de compra" step="0.01" required>
+  <input id="product-quantity" type="number" placeholder="Cantidad comprada" required>
+  <input id="product-price" type="number" placeholder="Precio de venta sugerido" readonly>
+  <button type="submit">Guardar</button>
+</form>
+
       </section>
 
       <!-- Ver productos -->
