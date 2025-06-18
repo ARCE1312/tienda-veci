@@ -7,7 +7,7 @@
   --danger: #dc2626;
 }
 
-/* Reset */
+/* Reset general */
 * {
   margin: 0;
   padding: 0;
@@ -15,41 +15,47 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: var(--dark);
   color: var(--light);
-  line-height: 1.6;
+  min-height: 100vh;
 }
 
+/* Encabezado */
 header {
   background-color: var(--primary);
-  padding: 1rem;
   text-align: center;
+  padding: 1rem;
   color: white;
+  font-size: 1.5rem;
 }
 
+/* Layout general */
 .app-container {
   display: flex;
-  min-height: calc(100vh - 60px);
+  flex-wrap: wrap;
 }
 
+/* Menú lateral */
 .sidebar {
-  width: 220px;
   background-color: var(--primary);
-  padding: 1rem;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  min-width: 200px;
+  flex: 1;
 }
 
 .sidebar button {
-  background-color: transparent;
+  background: transparent;
+  color: white;
   border: none;
-  color: var(--light);
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 0.8rem;
+  margin: 0.3rem 0;
   text-align: left;
+  font-size: 1rem;
   cursor: pointer;
-  font-weight: bold;
+  border-radius: 5px;
 }
 
 .sidebar button:hover,
@@ -57,11 +63,14 @@ header {
   background-color: var(--accent);
 }
 
+/* Panel principal */
 main {
-  flex: 1;
-  padding: 2rem;
+  flex: 3;
+  padding: 1rem;
+  min-width: 300px;
 }
 
+/* Paneles ocultos */
 .panel {
   display: none;
 }
@@ -70,21 +79,22 @@ main {
   display: block;
 }
 
+/* Formularios */
 form input,
 form select,
 form button {
   width: 100%;
   padding: 10px;
-  margin: 0.5rem 0;
-  border-radius: 5px;
+  margin: 0.4rem 0;
   border: none;
+  border-radius: 5px;
   font-size: 1rem;
 }
 
 form input,
 form select {
-  background: #fff;
-  color: #000;
+  background-color: white;
+  color: black;
 }
 
 form button {
@@ -97,17 +107,17 @@ form button:hover {
   background-color: var(--primary);
 }
 
+/* Tabla de productos */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
-  background-color: #fff;
-  color: #000;
+  background-color: white;
+  color: black;
 }
 
-table th,
-table td {
-  padding: 12px;
+th, td {
+  padding: 0.7rem;
   border: 1px solid #ccc;
   text-align: left;
 }
@@ -132,3 +142,30 @@ table td {
   color: var(--danger);
 }
 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.5rem;
+  }
+
+  .sidebar button {
+    flex: 1;
+    font-size: 0.9rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  main {
+    padding: 1rem 0.5rem;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
