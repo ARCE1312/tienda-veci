@@ -1,51 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de Inventario</title>
-  <link rel="stylesheet" href="estilos.css">
-</head>
-
-  <meta charset="UTF-8">
   <title>Gestión de Inventario</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
   <header>
-    <h1>Gestión Empresarial</h1>
+    <h1>Gestión de Inventario</h1>
   </header>
 
   <div class="app-container">
     <aside class="sidebar">
-      <button data-panel="add-product" class="active">➕ Registrar Producto</button>
-      <button data-panel="view-products">📦 Ver Productos</button>
-      <button data-panel="add-sale">💸 Registrar Venta</button>
-      <button data-panel="view-balance">📊 Ver Balance</button>
+      <button data-panel="add-product" class="active">➕ Producto</button>
+      <button data-panel="view-products">📦 Inventario</button>
+      <button data-panel="add-sale">💸 Venta</button>
+      <button data-panel="view-balance">📊 Balance</button>
     </aside>
 
     <main>
-      <!-- Panel: Registrar Producto -->
+      <!-- Registrar Producto -->
       <section id="add-product" class="panel active">
         <h2>Registrar Producto</h2>
         <form id="form-product">
           <input id="product-name" type="text" placeholder="Nombre" required>
-          <input id="product-cost" type="number" placeholder="Precio de compra unitario" step="0.01" required>
-          <input id="product-quantity" type="number" placeholder="Cantidad comprada" required>
-          <input id="product-price" type="number" placeholder="Precio sugerido (35% ganancia)" readonly>
+          <input id="product-cost" type="number" placeholder="Precio de compra" step="0.01" required>
+          <input id="product-quantity" type="number" placeholder="Cantidad" required>
+          <input id="product-price" type="number" placeholder="Precio de venta (35% ganancia)" readonly>
           <button type="submit">Guardar</button>
         </form>
       </section>
 
-      <!-- Panel: Ver Productos -->
+      <!-- Ver productos -->
       <section id="view-products" class="panel">
         <h2>Inventario</h2>
         <div id="products-container"></div>
       </section>
 
-      <!-- Panel: Registrar Venta -->
+      <!-- Registrar venta -->
       <section id="add-sale" class="panel">
         <h2>Registrar Venta</h2>
         <form id="form-sale">
@@ -55,7 +49,7 @@
         </form>
       </section>
 
-      <!-- Panel: Ver Balance -->
+      <!-- Balance -->
       <section id="view-balance" class="panel">
         <h2>Balance del Día</h2>
         <div id="balance-container"></div>
