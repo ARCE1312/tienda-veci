@@ -30,16 +30,17 @@ document.getElementById('product-cost').addEventListener('input', () => {
 });
 
 // Guardar producto
-document.getElementById('form-product').addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById('product-name').value;
+document.getElementById('product-cost').addEventListener('input', () => {
   const cost = parseFloat(document.getElementById('product-cost').value);
-  const quantity = parseInt(document.getElementById('product-quantity').value);
+  const priceField = document.getElementById('product-price');
+  if (!isNaN(cost)) {
+    const suggested = cost * 1.35;
+    priceField.value = suggested.toFixed(2);
+  } else {
+    priceField.value = '';
+  }
+});
 
-  if (!name || isNaN(cost) || isNaN(quantity)) {
-    alert('Todos los campos son obligatorios.');
-    return;
   }
 
   const price = cost * 1.35;
