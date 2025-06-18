@@ -1,0 +1,134 @@
+:root {
+  --primary: #1e3a8a;
+  --dark: #000000;
+  --accent: #2563eb;
+  --light: #e0e7ff;
+  --success: #16a34a;
+  --danger: #dc2626;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--dark);
+  color: var(--light);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--primary);
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.app-container {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+.sidebar {
+  width: 220px;
+  background-color: var(--primary);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar button {
+  background-color: transparent;
+  border: none;
+  color: var(--light);
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+  background-color: var(--accent);
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+form input,
+form select,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+form input,
+form select {
+  background: #fff;
+  color: #000;
+}
+
+form button {
+  background-color: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--primary);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  color: #000;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.balance-card {
+  background-color: #1f2937;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.highlight {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.highlight-success {
+  color: var(--success);
+}
+
+.highlight-danger {
+  color: var(--danger);
+}
+
