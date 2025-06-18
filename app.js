@@ -29,6 +29,34 @@ document.getElementById('product-cost').addEventListener('input', () => {
   }
 });
 
+document.getElementById('form-product').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('product-name').value;
+  const cost = parseFloat(document.getElementById('product-cost').value);
+  const price = parseFloat(document.getElementById('product-price').value);
+  const quantity = parseInt(document.getElementById('product-quantity').value);
+
+  if (!name || isNaN(cost) || isNaN(quantity) || isNaN(price)) {
+    alert('Todos los campos deben estar completos.');
+    return;
+  }
+
+  const newProduct = {
+    id: Date.now().toString(),
+    name,
+    cost,
+    price,
+    quantity
+  };
+
+  DB.products.push(newProduct);
+  DB.saveProducts();
+  alert('Producto guardado correctamente.');
+  e.target.reset();
+});
+
+
 // Guardar producto
 document.getElementById('product-cost').addEventListener('input', () => {
   const cost = parseFloat(document.getElementById('product-cost').value);
