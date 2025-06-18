@@ -2,14 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de Inventario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventario con Precio Sugerido</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
   <header>
-    <h1>Gestión de Inventario</h1>
+    <h1>Sistema de Inventario</h1>
   </header>
 
   <div class="app-container">
@@ -21,25 +20,27 @@
     </aside>
 
     <main>
-      <!-- Panel: Agregar Producto -->
       <section id="add-product" class="panel active">
         <h2>Registrar Producto</h2>
         <form id="form-product">
           <input id="product-name" type="text" placeholder="Nombre del producto" required>
-          <input id="product-cost" type="number" step="0.01" placeholder="Precio de compra" required>
-          <input id="product-quantity" type="number" placeholder="Cantidad comprada" required>
-          <input id="product-price" type="number" placeholder="Precio sugerido (35%)" readonly>
-          <button type="submit">Guardar Producto</button>
+          <input id="product-cost" type="number" placeholder="Precio de compra" required>
+          <input id="product-quantity" type="number" placeholder="Cantidad" required>
+          
+          <div class="price-options">
+            <input id="product-price" type="number" placeholder="Precio de venta (editable)" required>
+            <button type="button" id="btn-suggested">Usar sugerido</button>
+          </div>
+
+          <button type="submit">Guardar producto</button>
         </form>
       </section>
 
-      <!-- Panel: Ver Productos -->
       <section id="view-products" class="panel">
         <h2>Inventario</h2>
         <div id="products-container"></div>
       </section>
 
-      <!-- Panel: Registrar Venta -->
       <section id="add-sale" class="panel">
         <h2>Registrar Venta</h2>
         <form id="form-sale">
@@ -49,9 +50,8 @@
         </form>
       </section>
 
-      <!-- Panel: Ver Balance -->
       <section id="view-balance" class="panel">
-        <h2>Balance del Día</h2>
+        <h2>Balance</h2>
         <div id="balance-container"></div>
       </section>
     </main>
